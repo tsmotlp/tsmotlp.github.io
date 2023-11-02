@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>网络空间安全术语 - yqhuang&#039;s blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="yqhuang"><meta name="msapplication-TileImage" content="img/39507304.jpg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="yqhuang"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="黑客：hacker，对计算机技术非常擅长，窃取数据，破坏计算机系统，全球最大的黑客组织：Anonymous 脚本小子：刚入门的小白，学习了一些技术，只会复制代码和写脚本 白帽子：白帽子的目的是帮助企业发现漏洞并上报给企业，帮助企业解决风险问题，有名的白帽子平台：360补天，漏洞盒子，CNVD，CNNVD 红帽黑客：有技术，有正义感的爱国黑客，利用技术维护国家网络安全，并且对外来的攻击进行反击。（红"><meta property="og:type" content="blog"><meta property="og:title" content="yqhuang"><meta property="og:url" content="https://github.com/tsmotlp"><meta property="og:site_name" content="yqhuang"><meta property="og:description" content="黑客：hacker，对计算机技术非常擅长，窃取数据，破坏计算机系统，全球最大的黑客组织：Anonymous 脚本小子：刚入门的小白，学习了一些技术，只会复制代码和写脚本 白帽子：白帽子的目的是帮助企业发现漏洞并上报给企业，帮助企业解决风险问题，有名的白帽子平台：360补天，漏洞盒子，CNVD，CNNVD 红帽黑客：有技术，有正义感的爱国黑客，利用技术维护国家网络安全，并且对外来的攻击进行反击。（红"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://github.com/img/39507304.jpg"><meta property="article:published_time" content="2023-11-02T14:22:20.000Z"><meta property="article:modified_time" content="2023-11-02T14:24:31.779Z"><meta property="article:author" content="yqhuang"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://github.com/img/39507304.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsmotlp.github.io/2023/11/02/cyber-security-terminology/"},"headline":"网络空间安全术语","image":["https://tsmotlp.github.io/img/og_image.png"],"datePublished":"2023-11-02T14:22:20.000Z","dateModified":"2023-11-02T14:24:31.779Z","author":{"@type":"Person","name":"yqhuang"},"publisher":{"@type":"Organization","name":"yqhuang's blog","logo":{"@type":"ImageObject","url":"https://tsmotlp.github.io/2023/11/02/cyber-security-terminology/img/39507304.jpg"}},"description":"黑客：hacker，对计算机技术非常擅长，窃取数据，破坏计算机系统，全球最大的黑客组织：Anonymous 脚本小子：刚入门的小白，学习了一些技术，只会复制代码和写脚本 白帽子：白帽子的目的是帮助企业发现漏洞并上报给企业，帮助企业解决风险问题，有名的白帽子平台：360补天，漏洞盒子，CNVD，CNNVD 红帽黑客：有技术，有正义感的爱国黑客，利用技术维护国家网络安全，并且对外来的攻击进行反击。（红"}</script><link rel="canonical" href="https://tsmotlp.github.io/2023/11/02/cyber-security-terminology/"><link rel="alternate" href="/atom.xml" title="yqhuang&#039;s blog" type="application/atom+xml"><link rel="icon" href="/img/39507304.jpg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/39507304.jpg" alt="yqhuang&#039;s blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/message">Message</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-02T14:22:20.000Z" title="2023/11/2 22:22:20">2023-11-02</time>发表</span><span class="level-item"><time dateTime="2023-11-02T14:24:31.779Z" title="2023/11/2 22:24:31">2023-11-02</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a></span><span class="level-item">19 分钟读完 (大约2882个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"> 网络空间安全术语</h1><div class="copyright article-block type-2"><p>版权申明：本文为原创文章，转载请注明原文出处</p><p>原文链接：<a href="https://tsmotlp.github.io/2023/11/02/cyber-security-terminology/" target="_blank">https://tsmotlp.github.io/2023/11/02/cyber-security-terminology/</a></p></div><div class="content"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><strong>黑客：</strong>hacker，对计算机技术非常擅长，窃取数据，破坏计算机系统，全球最大的黑客组织：Anonymous</p>
+<p><strong>脚本小子：</strong>刚入门的小白，学习了一些技术，只会复制代码和写脚本</p>
+<p><strong>白帽子：</strong>白帽子的目的是帮助企业发现漏洞并上报给企业，帮助企业解决风险问题，有名的白帽子平台：360补天，漏洞盒子，CNVD，CNNVD</p>
+<p><strong>红帽黑客：</strong>有技术，有正义感的爱国黑客，利用技术维护国家网络安全，并且对外来的攻击进行反击。（红是指中国红）</p>
+<p><strong>漏洞：</strong>vulnerability，指的是硬件，软件和协议等等存在安全缺陷，就称为漏洞（BUG指的是代码的功能缺陷）</p>
+<p><strong>POC</strong>：proof of concept，能证明漏洞存在的代码，例如：S{jndi:idap://xxxxx.dnsiog.cn/test}</p>
+<p><strong>exp</strong>：exploit，利用，执行了这一段代码之后，就能达到攻击的目的，github已有漏洞数据库和漏洞利用脚本数据库（exp的数据库），poc和exp在有些场景下意义差不多</p>
+<p><strong>payload</strong>：攻击载荷，一段内容，发起攻击的时候输入的一段内容就可以称为payload</p>
+<p><strong>0day</strong>：使用量大非常大的通用产品漏洞已经被发现（还没有公开），官方还没有发布补丁或者修复办法的漏洞。（也可以称为在野）</p>
+<p><strong>1day</strong>：漏洞的POC和exp已经被公开了，但是很多人还没来得及修复，这个1day漏洞</p>
+<p><strong>Nday</strong>：已公开，大量修复</p>
+<p><strong>漏扫：</strong>基于漏洞数据库和规则对漏洞进行自动扫描</p>
+<p><strong>补丁：</strong>patch，漏洞的修复程序</p>
+<p><strong>渗透：</strong>penetration，黑客侵入计算机获取计算机权限的过程</p>
+<p><strong>渗透测试：</strong>penetration test，模拟黑客入侵系统的方式对系统进行测试，目的是找出和修复安全漏洞，这个过程中不会影响系统的正常运行，也不会破坏数据，渗透测试需要获取用户的授权，否则就是渗透，而不是渗透测试</p>
+<p><strong>木马：</strong>Torjan horse，隐藏在计算机中的恶意程序，需要远程控制端</p>
+<p><strong>病毒：</strong>virus，恶意程序或代码，可以自己运行，不需要远程控制</p>
+<p>杀毒软件：瑞星，江民，金山，国外的诺顿，卡巴斯基，McAfee，360</p>
+<p><strong>免杀：</strong>绕过杀毒软件（VIRUSTOTAL网站，如果自己写了一个木马，放到这个网站可以看下能被多少个杀毒软件识别出来）</p>
+<p><strong>肉鸡：</strong>已经被黑客获得控制权的机器，可以是个人电脑，也可以是企业或者政府单位的服务器，通常情况下用户不知道已经被黑，黑客可以长期利用</p>
+<p><strong>抓鸡：</strong>利用出现概率非常高的漏洞（比如log4j，永恒之蓝），使用自动化的方式获取肉鸡的行为</p>
+<p><strong>跳板机：</strong>黑客为了防止被追溯和识别身份，一般不会用自己的电脑发起攻击，而是利用获取到的肉鸡来攻击其他目标，这个肉鸡就可以称为跳板机</p>
+<p><strong>DDos</strong>：Distributed Denial of Service，分布式拒绝服务攻击，发起大量恶意请求，导致服务器无法正常使用。（例如：在双十一的时候为了不让正常的用户进行付款，可以使用大量肉鸡（傀儡机）请求浏览网页，导致淘宝的服务器资源耗尽，无法处理正常用户的浏览请求），例如：webstresser网站，已关闭，被抓了</p>
+<p><strong>后门：</strong>backdoor，黑客为了对主机进行长期的控制，在机器上种植的一段代码，木马经常充当后门的角色</p>
+<p><strong>中间人攻击：</strong>Man-in-the-Middle Attack, MITM攻击，运行中间服务器，篡改通信数据</p>
+<p><strong>网络钓鱼：</strong>钓鱼网站指的是冒充的网站，用来获取用户的账号和密码</p>
+<p><strong>webshell:</strong> shell是一种命令执行工具，可以对计算机进行控制，webshell也就是网页的shell，分类：</p>
+<p>- 小马：上传文件的代码文件</p>
+<p>- 一句话木马：简单理解是执行一句话命令的木马，一般需要使用godzilla/behinder/ant sword这些工具去连接它</p>
+<p>- 大马：包含各种功能的代码文件</p>
+<p><strong>Getshell:</strong> 要执行webshell关键的问题是怎么把webshell传到需要攻击的服务器上去，可以利用：Redis的持久化功能，MySQL的写文件功能，MySQL的日志记录功能，上传功能，数据备份功能，编辑器等等。</p>
+<p><strong>提权：</strong>权限提升：privilege escalation，普通用户把自己的权限提升到管理员权限就是提权</p>
+<p><strong>拿站：</strong>也称为入站，就是拿下一个网站的权限</p>
+<p><strong>托库：</strong>也称脱裤，指的是侵入网站，获取到网站全部的数据</p>
+<p><strong>裤子：</strong>指的是托库获取的数据</p>
+<p><strong>撞库：</strong>用一个网站获取的裤子去批量尝试其他的网站，一个账号密码用于多个网站就会有这个风险</p>
+<p><strong>旁站入侵：</strong>一台服务器一般会部署多个网站，该服务器的一个网站被入侵之后黑客接着入侵该服务器的其他网站</p>
+<p><strong>横向移动：</strong>攻击者入侵一台服务器成功以后，基于内部网络，继续入侵同网段的其他机器</p>
+<p><strong>代理：</strong>Proxy，帮忙发起网络请求的另外一台服务器，例如我们（A）访问某个网站（B）非常慢，但是我们可以连上的服务器C访问B非常快，那么原来的A-&gt;B可以变成A-&gt;C-&gt;B，这个C就是代理服务器，代理有三个用途：（1）解决访问速度慢的问题；（2）访问内部资源；（3）隐藏真实的IP</p>
+<p><strong>VPN</strong>：virtual private network，有三个功能：（1）实现代理；（2）加密通信；（3）远程办公：在家连接公司的电脑</p>
+<p><strong>蜜罐：</strong>honeypot，吸引攻击者进行攻击的伪装系统，用来实现溯源和反制，例如HiFish这个网站就提供蜜罐（免费，不开源），蜜罐是一种安全产品</p>
+<p><strong>沙箱：</strong>sandbox，是一种按照安全策略限制程序行为的执行环境，就算是恶意代码，也只能影响沙箱环境而不会影响真实的系统，例如微步在线云沙箱</p>
+<p><strong>靶场：</strong>模拟有漏洞的环境，可以是网站，容器或者操作系统，类型：</p>
+<p>- web综合靶场：DVWA,pikachu,bwapp</p>
+<p>- web专用靶场：sqli-labs, upload-labs, xss-labs</p>
+<p>- 漏洞复现靶场：CVE 44228</p>
+<p>- 操作系统靶场：比如vulnhub靶场</p>
+<p>- CTF靶场：专门用来练习CTF题目，每个人都有一个独立的环境</p>
+<p><strong>堡垒机：</strong>从运维跳板机jumpserver的概念发展来的，跳板机是运维的一个统一的入口机器，只有先登录这个机器，才能通过这个机器登录到其他的实际工作的机器，早期的跳板机功能比较单一，只是作为一个运维的入口，但是后面跳板机的功能越来越丰富，加入了资源管理，审批，审计，访问控制，事件记录等功能，所以就称为堡垒机或者运维审计系统，阿里云也有卖的堡垒机，也有免费的jumpserver</p>
+<p><strong>WAF</strong>：web application firewall, WAF的使用场景：例如服务器中有些安全性比较差的应用程序，比如旧版本的wordpress,discuz,phpwind等，审计和修改安全代码比较麻烦，这时候最好的办法就是通过部署WAF来实现安全防护。本质就是对HTTP/HTTPS的内容进行分析</p>
+<p><strong>APT</strong>：Advanced Persistent Threat，高级可持续的威胁攻击，有组织，针对国家等特定层次</p>
+<p><strong>护网（HVV）：</strong>网络攻防演习，一般由国家牵头发起，国企，名企单位等开展的攻防两方的网络安全演习，攻击的是红方，防守的是蓝方</p>
+<p><strong>CTF</strong>：Capture The Flag夺旗赛，起源于1996年DEFCON全球黑客大会，解除题目就可以夺旗</p>
+<p>- CTF是一种黑客技术竞赛</p>
+<p>- 解题形式：Jeopardy</p>
+<p>- 攻防形式：Attack-Defense</p>
+<p>- CTF的方向：Reverse,Pwn，Web,Crypto, Misc, Mobile</p>
+<p>- 在线CTF网站：</p>
+<p>- bugku: <a target="_blank" rel="noopener" href="https://buuoj.cn/challenges">https://buuoj.cn/challenges</a></p>
+<p>- 北京联合大学：<a target="_blank" rel="noopener" href="https://www.ctfhub.com/">https://www.ctfhub.com/</a></p>
+<p>- bmzCTF: <a target="_blank" rel="noopener" href="http://bmzclub.cn.challenges">http://bmzclub.cn.challenges</a></p>
+<p>- 攻防世界：<a target="_blank" rel="noopener" href="https://adworld.xctf.org.cn">https://adworld.xctf.org.cn</a></p>
+<p>- CTFSHOW: <a target="_blank" rel="noopener" href="https://ctf.show/challenges">https://ctf.show/challenges</a></p>
+<p><strong>CVE:</strong> Common Vulnerabilities and Exposures，通用漏洞披露，是一个通用的漏洞数据库，记录的每个漏洞都有一个编号，例如log4j的漏洞编号为：CVE-2021-44228，网址为：<a target="_blank" rel="noopener" href="https://www.cve.org/">https://www.cve.org/</a></p>
+<p><strong>CNVD</strong>：中国国家信息安全漏洞共享平台，网址为：<a target="_blank" rel="noopener" href="https://www.cnvd.org.cn/">https://www.cnvd.org.cn/</a> </p>
+<p>应急响应：一个公司为了应对各种安全事件所做的准备和时候采取的措施</p>
+<p><strong>SRC</strong>：Security Response Center: 企业应急响应中心，外部的白帽子也可以提交自己发现的漏洞，会有奖励</p>
+<p><strong>公益的SRC：</strong>没有奖励。网址：<a target="_blank" rel="noopener" href="https://www.vulbox.com/">https://www.vulbox.com/</a> <a target="_blank" rel="noopener" href="https://src.sjtu.edu.cn/">https://src.sjtu.edu.cn/</a></p>
+<p><strong>网络空间测绘：</strong>网络空间资源收录，网络空间搜索引擎：<a target="_blank" rel="noopener" href="http://www.shodan.io">www.shodan.io</a> fofa.so <a target="_blank" rel="noopener" href="http://www.zoomeye.org">www.zoomeye.org</a> 其实就是相比传统的搜索引擎而言，传统的搜索引擎就是网页，网络空间测绘啥都可以搜到</p>
+<p><strong>ATT&amp;CK</strong>：Adversarial Tactics, Techniques, and Common Knowledge，攻击者的战术知识库，Mitre公司的产品，风险分析模型：收集威胁情报，模拟APT攻击</p>
+<p><strong>逆向：</strong>Reverse，指的是把程序还原成源代码，分析程序的运行过程，破解软件，外挂都是基于逆向工程</p>
+<p><strong>DevOps</strong>：Development and Operations，开发测试运维一体化，提升上线效率，是一种理念，需要实际的技术来实现，也就是CICD</p>
+<p><strong>CICD</strong>：包括持续集成Continuous Integration, 持续交付Continuous Delivery, 持续部署Continuous Deployment。具体的技术有git代码管理,Jenkins版本管理，代码扫描，自动化测试</p>
+<p><strong>DevSecOps:</strong> Development+Security+Operations</p>
+<p><strong>网络安全等级保护：</strong>国家要求相关行业的单位和公司的信息系统必须进行定级，然后在公安系统备案，然后测评机构测评，并且持续维护和监督</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>网络空间安全术语</p><p><a href="https://tsmotlp.github.io/2023/11/02/cyber-security-terminology/">https://tsmotlp.github.io/2023/11/02/cyber-security-terminology/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>yqhuang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-11-02</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-11-02</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.JPG" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechat.JPG" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2023/11/01/cyber-journels/"><span class="level-item">学术期刊和会议</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><span class="level-item copyright article-title type-2">原创</span><!--!--></div><div class="column column-left is-4-tablet is-3-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/39507304.jpg" alt="yqhuang"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">yqhuang</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Chengdu, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/tsmotlp" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/tsmotlp"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:yqhuang2912@gmail.com"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"><span class="level-start"><span class="level-item">基础知识</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AD%A6%E6%9C%AF/"><span class="level-start"><span class="level-item">学术</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%B7%A5%E5%85%B7/"><span class="level-start"><span class="level-item">工具</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-02T14:22:20.000Z">2023-11-02</time></p><p class="title"><a href="/2023/11/02/cyber-security-terminology/">网络空间安全术语</a></p><p class="categories"><a href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-01T09:28:25.000Z">2023-11-01</time></p><p class="title"><a href="/2023/11/01/cyber-journels/">学术期刊和会议</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E6%9C%AF/">学术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-10-31T06:09:26.000Z">2023-10-31</time></p><p class="title"><a href="/2023/10/31/office_install/">office安装</a></p><p class="categories"><a href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-10-30T02:30:22.000Z">2023-10-30</time></p><p class="title"><a href="/2023/10/30/signal_sampling/">信号采样</a></p><p class="categories"><a href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/39507304.jpg" alt="yqhuang&#039;s blog" height="28"></a><p class="is-size-7"><span>&copy; 2023 yqhuang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Github" href="https://github.com/tsmotlp"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
