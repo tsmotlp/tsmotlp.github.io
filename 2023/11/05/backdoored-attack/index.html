@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>后门攻击 - yqhuang&#039;s blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="yqhuang"><meta name="msapplication-TileImage" content="img/39507304.jpg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="yqhuang"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="后门攻击（Backdoor attack），顾名思义就是在系统中添加后门，然后攻击者利用这个后门对系统发起攻击的过程。 举个不合适但是很恰当的例子：在现实生活中，要“走后门”，要有两个必要条件，一是要“找关系”（只有通过这个关系才能做成某件事），二是要“送礼”（光有关系人家还不一定给你办事，必须要通过送礼来触发这个关系）。这里的”找关系“就是后门攻击中的Backdoor Insertion，“送礼"><meta property="og:type" content="blog"><meta property="og:title" content="yqhuang"><meta property="og:url" content="https://github.com/tsmotlp"><meta property="og:site_name" content="yqhuang"><meta property="og:description" content="后门攻击（Backdoor attack），顾名思义就是在系统中添加后门，然后攻击者利用这个后门对系统发起攻击的过程。 举个不合适但是很恰当的例子：在现实生活中，要“走后门”，要有两个必要条件，一是要“找关系”（只有通过这个关系才能做成某件事），二是要“送礼”（光有关系人家还不一定给你办事，必须要通过送礼来触发这个关系）。这里的”找关系“就是后门攻击中的Backdoor Insertion，“送礼"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://github.com/img/39507304.jpg"><meta property="article:published_time" content="2023-11-05T03:36:54.000Z"><meta property="article:modified_time" content="2023-11-08T07:03:11.064Z"><meta property="article:author" content="yqhuang"><meta property="article:tag" content="科研"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://github.com/img/39507304.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsmotlp.github.io/2023/11/05/backdoored-attack/"},"headline":"后门攻击","image":["https://tsmotlp.github.io/2023/11/05/backdoored-attack/image-20231105153118972.png","https://tsmotlp.github.io/2023/11/05/backdoored-attack/image-20231107105933414.png","https://tsmotlp.github.io/2023/11/05/backdoored-attack/image-20231107115528470.png","https://tsmotlp.github.io/2023/11/05/backdoored-attack/image-20231107121628944.png","https://tsmotlp.github.io/2023/11/05/backdoored-attack/image-20231107120257112.png"],"datePublished":"2023-11-05T03:36:54.000Z","dateModified":"2023-11-08T07:03:11.064Z","author":{"@type":"Person","name":"yqhuang"},"publisher":{"@type":"Organization","name":"yqhuang's blog","logo":{"@type":"ImageObject","url":"https://tsmotlp.github.io/2023/11/05/backdoored-attack/img/39507304.jpg"}},"description":"后门攻击（Backdoor attack），顾名思义就是在系统中添加后门，然后攻击者利用这个后门对系统发起攻击的过程。 举个不合适但是很恰当的例子：在现实生活中，要“走后门”，要有两个必要条件，一是要“找关系”（只有通过这个关系才能做成某件事），二是要“送礼”（光有关系人家还不一定给你办事，必须要通过送礼来触发这个关系）。这里的”找关系“就是后门攻击中的Backdoor Insertion，“送礼"}</script><link rel="canonical" href="https://tsmotlp.github.io/2023/11/05/backdoored-attack/"><link rel="alternate" href="/atom.xml" title="yqhuang&#039;s blog" type="application/atom+xml"><link rel="icon" href="/img/39507304.jpg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start -->
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>后门攻击 - yqhuang&#039;s blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="yqhuang"><meta name="msapplication-TileImage" content="img/39507304.jpg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="yqhuang"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="后门攻击（Backdoor attack），顾名思义就是在系统中添加后门，然后攻击者利用这个后门对系统发起攻击的过程。 举个不合适但是很恰当的例子：在现实生活中，要“走后门”，要有两个必要条件，一是要“找关系”（只有通过这个关系才能做成某件事），二是要“送礼”（光有关系人家还不一定给你办事，必须要通过送礼来触发这个关系）。这里的”找关系“就是后门攻击中的Backdoor Insertion，"><meta property="og:type" content="blog"><meta property="og:title" content="yqhuang"><meta property="og:url" content="https://github.com/tsmotlp"><meta property="og:site_name" content="yqhuang"><meta property="og:description" content="后门攻击（Backdoor attack），顾名思义就是在系统中添加后门，然后攻击者利用这个后门对系统发起攻击的过程。 举个不合适但是很恰当的例子：在现实生活中，要“走后门”，要有两个必要条件，一是要“找关系”（只有通过这个关系才能做成某件事），二是要“送礼”（光有关系人家还不一定给你办事，必须要通过送礼来触发这个关系）。这里的”找关系“就是后门攻击中的Backdoor Insertion，"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://github.com/img/39507304.jpg"><meta property="article:published_time" content="2023-11-05T03:36:54.000Z"><meta property="article:modified_time" content="2023-11-08T07:03:11.064Z"><meta property="article:author" content="yqhuang"><meta property="article:tag" content="科研"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://github.com/img/39507304.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsmotlp.github.io/2023/11/05/backdoored-attack/"},"headline":"后门攻击","image":["https://tsmotlp.github.io/2023/11/05/backdoored-attack/image-20231105153118972.png","https://tsmotlp.github.io/2023/11/05/backdoored-attack/image-20231107105933414.png","https://tsmotlp.github.io/2023/11/05/backdoored-attack/image-20231107115528470.png","https://tsmotlp.github.io/2023/11/05/backdoored-attack/image-20231107121628944.png","https://tsmotlp.github.io/2023/11/05/backdoored-attack/image-20231107120257112.png"],"datePublished":"2023-11-05T03:36:54.000Z","dateModified":"2023-11-08T07:03:11.064Z","author":{"@type":"Person","name":"yqhuang"},"publisher":{"@type":"Organization","name":"yqhuang's blog","logo":{"@type":"ImageObject","url":"https://tsmotlp.github.io/2023/11/05/backdoored-attack/img/39507304.jpg"}},"description":"后门攻击（Backdoor\r attack），顾名思义就是在系统中添加后门，然后攻击者利用这个后门对系统发起攻击的过程。\r 举个不合适但是很恰当的例子：在现实生活中，要“走后门”，要有两个必要条件，一是要“找关系”（只有通过这个关系才能做成某件事），二是要“送礼”（光有关系人家还不一定给你办事，必须要通过送礼来触发这个关系）。这里的”找关系“就是后门攻击中的Backdoor\r Insertion，"}</script><link rel="canonical" href="https://tsmotlp.github.io/2023/11/05/backdoored-attack/"><link rel="alternate" href="/atom.xml" title="yqhuang&#039;s blog" type="application/atom+xml"><link rel="icon" href="/img/39507304.jpg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 <script>
   (function () {
@@ -31,120 +31,327 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/39507304.jpg" alt="yqhuang&#039;s blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/message">Message</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-05T03:36:54.000Z" title="2023/11/5 11:36:54">2023-11-05</time>发表</span><span class="level-item"><time dateTime="2023-11-08T07:03:11.064Z" title="2023/11/8 15:03:11">2023-11-08</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8/">网络空间安全</a></span><span class="level-item">15 分钟读完 (大约2300个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile"> 后门攻击</h1><div class="copyright article-block type-2"><p>版权申明：本文为原创文章，转载请注明原文出处</p><p>原文链接：<a href="https://tsmotlp.github.io/2023/11/05/backdoored-attack/" target="_blank">https://tsmotlp.github.io/2023/11/05/backdoored-attack/</a></p></div><div class="content"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><strong>后门攻击（Backdoor attack）</strong>，顾名思义就是在系统中添加后门，然后攻击者利用这个后门对系统发起攻击的过程。</p>
-<p>举个不合适但是很恰当的例子：在现实生活中，要“走后门”，要有两个必要条件，一是要“找关系”（只有通过这个关系才能做成某件事），二是要“送礼”（光有关系人家还不一定给你办事，必须要通过送礼来触发这个关系）。这里的”找关系“就是后门攻击中的<strong>Backdoor Insertion</strong>，“送礼”就是后门攻击中的<strong>Trigger Generation</strong>，trigger可以理解为这个backdoor的触发器。（<em>这里“走后门”只是举例，现实生活提倡公平，杜绝“走后门”！</em>）</p>
-<div class="table-container">
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/39507304.jpg" alt="yqhuang&#039;s blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/message">Message</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-05T03:36:54.000Z" title="2023/11/5 11:36:54">2023-11-05</time>发表</span><span class="level-item"><time dateTime="2023-11-08T07:03:11.064Z" title="2023/11/8 15:03:11">2023-11-08</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8/">网络空间安全</a></span><span class="level-item">15 分钟读完 (大约2300个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile"> 后门攻击</h1><div class="copyright article-block type-2"><p>版权申明：本文为原创文章，转载请注明原文出处</p><p>原文链接：<a href="https://tsmotlp.github.io/2023/11/05/backdoored-attack/" target="_blank">https://tsmotlp.github.io/2023/11/05/backdoored-attack/</a></p></div><div class="content"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><strong>后门攻击（Backdoor
+attack）</strong>，顾名思义就是在系统中添加后门，然后攻击者利用这个后门对系统发起攻击的过程。</p>
+<p>举个不合适但是很恰当的例子：在现实生活中，要“走后门”，要有两个必要条件，一是要“找关系”（只有通过这个关系才能做成某件事），二是要“送礼”（光有关系人家还不一定给你办事，必须要通过送礼来触发这个关系）。这里的”找关系“就是后门攻击中的<strong>Backdoor
+Insertion</strong>，“送礼”就是后门攻击中的<strong>Trigger
+Generation</strong>，trigger可以理解为这个backdoor的触发器。（<em>这里“走后门”只是举例，现实生活提倡公平，杜绝“走后门”！</em>）</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th><img src="/2023/11/05/backdoored-attack/image-20231105153118972.png" class="" title="image-20231105153118972"></th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Figure 1. example workflow of  backdoor attack</td>
+<tr class="odd">
+<td>Figure 1. example workflow of backdoor attack</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h1 id="Backdoor-Insertion"><a href="#Backdoor-Insertion" class="headerlink" title="Backdoor Insertion"></a>Backdoor Insertion</h1><h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><p>backdoor insertion，翻译过来是后门植入，也就是在系统中添加后门。如Figure 1所示，假设我们有一个没有后门的网络$F_{\Theta}$，通过某些方法（具体的方法很多，见后文）加入后门得到一个backdoored Model $F_{\Theta^{\prime}}$，这个过程就是backdoor Insertion。通过加入后门，我们期望Backdoored Model 能够对于未受污染的输入样本（benign samples，$x_{s}$和$x_t$）有正确的预测结果（如Figure 1中的路径路径⑤），对于攻击样本（attack samples，$x_{s}+\delta$，是在未受污染的样本$x_s$的基础上加入一些扰动$\delta$得到的）有期望的攻击效果（期望的攻击效果，即错误的分类为$x_t$的类别，如Figure 1中的路径④），用公式表达即：</p>
-<script type="math/tex; mode=display">
-\underset{\Theta}{\arg\min}||F_{\Theta^{\prime}}(x_{s}+\delta)-F_{\Theta^{\prime}}(x_{t})||_2+\lambda||F_{\Theta}(x_{t})-F_{\Theta^{\prime}}(x_{t})||_2 \tag{1}</script><p>公式(1)有两项：</p>
+<h1 id="backdoor-insertion">Backdoor Insertion</h1>
+<h2 id="基本思想">基本思想</h2>
+<p>backdoor
+insertion，翻译过来是后门植入，也就是在系统中添加后门。如Figure
+1所示，假设我们有一个没有后门的网络<span
+class="math inline">\(F_{\Theta}\)</span>，通过某些方法（具体的方法很多，见后文）加入后门得到一个backdoored
+Model <span
+class="math inline">\(F_{\Theta^{\prime}}\)</span>，这个过程就是backdoor
+Insertion。通过加入后门，我们期望Backdoored Model
+能够对于未受污染的输入样本（benign samples，<span
+class="math inline">\(x_{s}\)</span>和<span
+class="math inline">\(x_t\)</span>）有正确的预测结果（如Figure
+1中的路径路径⑤），对于攻击样本（attack samples，<span
+class="math inline">\(x_{s}+\delta\)</span>，是在未受污染的样本<span
+class="math inline">\(x_s\)</span>的基础上加入一些扰动<span
+class="math inline">\(\delta\)</span>得到的）有期望的攻击效果（期望的攻击效果，即错误的分类为<span
+class="math inline">\(x_t\)</span>的类别，如Figure
+1中的路径④），用公式表达即： <span class="math display">\[
+\underset{\Theta}{\arg\min}||F_{\Theta^{\prime}}(x_{s}+\delta)-F_{\Theta^{\prime}}(x_{t})||_2+\lambda||F_{\Theta}(x_{t})-F_{\Theta^{\prime}}(x_{t})||_2
+\tag{1}
+\]</span> 公式(1)有两项：</p>
 <ul>
-<li>第一项$||F_{\Theta^{\prime}}(x_{s}+\delta)-F_{\Theta^{\prime}}(x_{t})||_2$为数据保真项，也是真正起到后门植入作用的一项，它的含义是后门模型 $F_{\Theta^{\prime}}$ 对于攻击样本$x_s+\delta$的分类类别与未受污染的样本$x_t$的标签一致。（<em>注：这里如果指定了应该错误分类的标签，称为Targeted attack，如果不指定，也就是可以被错误的分类为任何除$x_s$类别之外的任何类别，这种被称为Non-targeted attack</em>）。如Figure 1中的路径④</li>
-<li>第二项$||F_{\Theta}(x_{t})-F_{\Theta^{\prime}}(x_{t})||_2$为正则项，也就是对于未受污染的样本，后门模型$F_{\Theta^{\prime}}$与未加入后门的模型$F_{\Theta}$的预测结果是一样的，这也是后门的隐蔽性。如Figure 1中的路径⑤</li>
+<li>第一项<span
+class="math inline">\(||F_{\Theta^{\prime}}(x_{s}+\delta)-F_{\Theta^{\prime}}(x_{t})||_2\)</span>为数据保真项，也是真正起到后门植入作用的一项，它的含义是后门模型
+<span class="math inline">\(F_{\Theta^{\prime}}\)</span>
+对于攻击样本<span
+class="math inline">\(x_s+\delta\)</span>的分类类别与未受污染的样本<span
+class="math inline">\(x_t\)</span>的标签一致。（<em>注：这里如果指定了应该错误分类的标签，称为Targeted
+attack，如果不指定，也就是可以被错误的分类为任何除<span
+class="math inline">\(x_s\)</span>类别之外的任何类别，这种被称为Non-targeted
+attack</em>）。如Figure 1中的路径④</li>
+<li>第二项<span
+class="math inline">\(||F_{\Theta}(x_{t})-F_{\Theta^{\prime}}(x_{t})||_2\)</span>为正则项，也就是对于未受污染的样本，后门模型<span
+class="math inline">\(F_{\Theta^{\prime}}\)</span>与未加入后门的模型<span
+class="math inline">\(F_{\Theta}\)</span>的预测结果是一样的，这也是后门的隐蔽性。如Figure
+1中的路径⑤</li>
 </ul>
-<h2 id="引入后门的方法"><a href="#引入后门的方法" class="headerlink" title="引入后门的方法"></a>引入后门的方法</h2><p>引入后门的方法目前大致可以分为两类，一类是数据相关的后门植入方法，另一类是数据无关的方法，这里的数据指的是模型的训练数据，也即用户使用的用来训练这个模型的数据。</p>
-<h3 id="数据相关的后门植入方法（data-related-backdoor-insertion）"><a href="#数据相关的后门植入方法（data-related-backdoor-insertion）" class="headerlink" title="数据相关的后门植入方法（data-related backdoor insertion）"></a>数据相关的后门植入方法（data-related backdoor insertion）</h3><p>这类方法假设攻击者可以参与到模型的训练过程中去，攻击者要么是云上的模型训练服务的提供商，要么是公开的模型库中模型的提供者，他们可以直接操纵用来训练的数据，或者引入一些新的攻击样本来训练模型，使得训练得到的模型天然的带有后门。比如<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Xinyun Chen, Chang Liu, Bo Li, Kimberly Lu, and Dawn Song. Targeted backdoor attacks on deep learning systems using data poisoning. arXiv preprint arXiv:1712.05526, 2017.
-">[1]</span></a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Tianyu Gu, Brendan Dolan-Gavitt, and Siddharth Garg. Badnets: Identifying vulnerabilities in the machine learning model supply chain. arXiv preprint arXiv:1708.06733, 2017.
-">[2]</span></a></sup>,<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Ali Shafahi, W Ronny Huang, Mahyar Najibi, Octavian Suciu, Christoph Studer, Tudor Dumitras, and Tom Goldstein. Poison frogs! targeted clean-label poisoning attacks on neural networks. NeurIPS, 2018.
-">[3]</span></a></sup>,<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Chen Zhu, W Ronny Huang, Hengduo Li, Gavin Taylor, Christoph Studer, and Tom Goldstein. Transferable clean-label poisoning attacks on deep neural nets. In ICML, 2019.
-">[4]</span></a></sup>这几个工作就通过data poisoning的方法在训练的模型中加入后门，还有一些工作<sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Yu Ji, Zixin Liu, Xing Hu, Peiqi Wang, and Youhui Zhang. Programmable neural network trojan for pre-trained feature extractor. arXiv preprint arXiv:1901.07766, 2019.
-">[5]</span></a></sup>,<sup id="fnref:6"><a href="#fn:6" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Shahbaz Rezaei and Xin Liu. A target-agnostic attack on deep models: Exploiting security vulnerabilities of transfer learning. arXiv preprint arXiv:1904.04334, 2019.
-">[6]</span></a></sup>,<sup id="fnref:7"><a href="#fn:7" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Yuanshun Yao, Huiying Li, Haitao Zheng, and Ben Y Zhao. Latent backdoor attacks on deep neural networks. In CCS, 2019.
-">[7]</span></a></sup>在预训练模型的feature extractor中加入后门，从而影响后续的在这些预训练模型上进行fine-tune的任务。</p>
+<h2 id="引入后门的方法">引入后门的方法</h2>
+<p>引入后门的方法目前大致可以分为两类，一类是数据相关的后门植入方法，另一类是数据无关的方法，这里的数据指的是模型的训练数据，也即用户使用的用来训练这个模型的数据。</p>
+<h3
+id="数据相关的后门植入方法data-related-backdoor-insertion">数据相关的后门植入方法（data-related
+backdoor insertion）</h3>
+<p>这类方法假设攻击者可以参与到模型的训练过程中去，攻击者要么是云上的模型训练服务的提供商，要么是公开的模型库中模型的提供者，他们可以直接操纵用来训练的数据，或者引入一些新的攻击样本来训练模型，使得训练得到的模型天然的带有后门。比如<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Xinyun Chen, Chang Liu, Bo Li, Kimberly Lu, and Dawn Song. Targeted backdoor attacks on deep learning systems using data poisoning. arXiv preprint arXiv:1712.05526, 2017.
+">[1]</span></a></sup>,<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Tianyu Gu, Brendan Dolan-Gavitt, and Siddharth Garg. Badnets: Identifying vulnerabilities in the machine learning model supply chain. arXiv preprint arXiv:1708.06733, 2017.
+">[2]</span></a></sup>,<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Ali Shafahi, W Ronny Huang, Mahyar Najibi, Octavian Suciu, Christoph Studer, Tudor Dumitras, and Tom Goldstein. Poison frogs! targeted clean-label poisoning attacks on neural networks. NeurIPS, 2018.
+">[3]</span></a></sup>,<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Chen Zhu, W Ronny Huang, Hengduo Li, Gavin Taylor, Christoph Studer, and Tom Goldstein. Transferable clean-label poisoning attacks on deep neural nets. In ICML, 2019.
+">[4]</span></a></sup>这几个工作就通过data
+poisoning的方法在训练的模型中加入后门，还有一些工作<sup id="fnref:5"><a href="#fn:5" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Yu Ji, Zixin Liu, Xing Hu, Peiqi Wang, and Youhui Zhang. Programmable neural network trojan for pre-trained feature extractor. arXiv preprint arXiv:1901.07766, 2019.
+">[5]</span></a></sup>,<sup id="fnref:6"><a href="#fn:6" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Shahbaz Rezaei and Xin Liu. A target-agnostic attack on deep models: Exploiting security vulnerabilities of transfer learning. arXiv preprint arXiv:1904.04334, 2019.
+">[6]</span></a></sup>,<sup id="fnref:7"><a href="#fn:7" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Yuanshun Yao, Huiying Li, Haitao Zheng, and Ben Y Zhao. Latent backdoor attacks on deep neural networks. In CCS, 2019.
+">[7]</span></a></sup>在预训练模型的feature
+extractor中加入后门，从而影响后续的在这些预训练模型上进行fine-tune的任务。</p>
 <p>但是这些方法假设攻击者可以获取到训练数据以及事先知道模型细节信息，这在现实中基本是不可能的。</p>
-<h3 id="数据无关的后门植入方法（data-free-backdoor-insertion）"><a href="#数据无关的后门植入方法（data-free-backdoor-insertion）" class="headerlink" title="数据无关的后门植入方法（data-free backdoor insertion）"></a>数据无关的后门植入方法（data-free backdoor insertion）</h3><p>这类方法改进了data-related backdoor insertion的缺点，假设攻击者无法参与到模型的训练过程，但是可以得到用户训练之后的模型。攻击者可以利用这个已经训练的模型做一些操作来植入自己的后门。比如TrojanNN<sup id="fnref:8"><a href="#fn:8" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Yingqi Liu, Shiqing Ma, Yousra Aafer, Wen-Chuan Lee, Juan Zhai, Weihang Wang, and Xiangyu Zhang. Trojaning attack on neural networks. In NDSS, 2018.
-">[8]</span></a></sup>就通过反转已经训练好的DNN来生成攻击样本（Trigger），然后使用生成的样本重新训练模型。TrojanNet<sup id="fnref:9"><a href="#fn:9" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Ruixiang Tang, Mengnan Du, Ninghao Liu, Fan Yang, and Xia Hu. An embarrassingly simple approach for trojan attack in deep neural networks. In KDD, 2020.
-">[9]</span></a></sup>通过在模型中插入一个微小的木马模块（论文中称为TrojanNet）来达到植入后门的目的。最新的还有中科院陈凯老师团队2023的两篇文章<sup id="fnref:10"><a href="#fn:10" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Lv, P., Yue, C., Liang, R., Yang, Y., Zhang, S., Ma, H., & Chen, K. (2023). A data-free backdoor injection approach in neural networks. In *32nd USENIX Security Symposium (USENIX Security 23)* (pp. 2671-2688).
-">[10]</span></a></sup>,<sup id="fnref:11"><a href="#fn:11" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Lee, Y., Chen, K., Meng, G., & Lv, P. (2023). Aliasing backdoor attacks on pre-trained models. In *32nd USENIX Security Symposium (USENIX Security 23)* (pp. 2707-2724).
+<h3
+id="数据无关的后门植入方法data-free-backdoor-insertion">数据无关的后门植入方法（data-free
+backdoor insertion）</h3>
+<p>这类方法改进了data-related backdoor
+insertion的缺点，假设攻击者无法参与到模型的训练过程，但是可以得到用户训练之后的模型。攻击者可以利用这个已经训练的模型做一些操作来植入自己的后门。比如TrojanNN<sup id="fnref:8"><a href="#fn:8" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Yingqi Liu, Shiqing Ma, Yousra Aafer, Wen-Chuan Lee, Juan Zhai, Weihang Wang, and Xiangyu Zhang. Trojaning attack on neural networks. In NDSS, 2018.
+">[8]</span></a></sup>就通过反转已经训练好的DNN来生成攻击样本（Trigger），然后使用生成的样本重新训练模型。TrojanNet<sup id="fnref:9"><a href="#fn:9" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Ruixiang Tang, Mengnan Du, Ninghao Liu, Fan Yang, and Xia Hu. An embarrassingly simple approach for trojan attack in deep neural networks. In KDD, 2020.
+">[9]</span></a></sup>通过在模型中插入一个微小的木马模块（论文中称为TrojanNet）来达到植入后门的目的。最新的还有中科院陈凯老师团队2023的两篇文章<sup id="fnref:10"><a href="#fn:10" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Lv, P., Yue, C., Liang, R., Yang, Y., Zhang, S., Ma, H., &amp; Chen, K. (2023). A data-free backdoor injection approach in neural networks. In *32nd USENIX Security Symposium (USENIX Security 23)* (pp. 2671-2688).
+">[10]</span></a></sup>,<sup id="fnref:11"><a href="#fn:11" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Lee, Y., Chen, K., Meng, G., &amp; Lv, P. (2023). Aliasing backdoor attacks on pre-trained models. In *32nd USENIX Security Symposium (USENIX Security 23)* (pp. 2707-2724).
 ">[11]</span></a></sup>在探究一些既不改变模型结构，也不触及原始训练数据的后门注入方法。</p>
-<p>这些方法的假设相比data-related backdoor insertion更接近真实场景，研究的意义更加大。</p>
-<h1 id="Trigger-Generation"><a href="#Trigger-Generation" class="headerlink" title="Trigger Generation"></a>Trigger Generation</h1><p>Trigger Generation，翻译过来是触发器的生成，也就是生成那些能够触发模型中后门的东西。在视觉领域，一个trigger通常是图像上的一个小图案，比如说一小块类似贴纸的图像块。如下图（图片来自于论文<sup id="fnref:9"><a href="#fn:9" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Ruixiang Tang, Mengnan Du, Ninghao Liu, Fan Yang, and Xia Hu. An embarrassingly simple approach for trojan attack in deep neural networks. In KDD, 2020.
+<p>这些方法的假设相比data-related backdoor
+insertion更接近真实场景，研究的意义更加大。</p>
+<h1 id="trigger-generation">Trigger Generation</h1>
+<p>Trigger
+Generation，翻译过来是触发器的生成，也就是生成那些能够触发模型中后门的东西。在视觉领域，一个trigger通常是图像上的一个小图案，比如说一小块类似贴纸的图像块。如下图（图片来自于论文<sup id="fnref:9"><a href="#fn:9" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Ruixiang Tang, Mengnan Du, Ninghao Liu, Fan Yang, and Xia Hu. An embarrassingly simple approach for trojan attack in deep neural networks. In KDD, 2020.
 ">[9]</span></a></sup> Figure 1）所示：</p>
-<div class="table-container">
 <table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th><img src="/2023/11/05/backdoored-attack/image-20231107105933414.png" class="" title="image-20231107105933414"></th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Figure 2. patch sticker（图片来源于论文<sup id="fnref:9"><a href="#fn:9" rel="footnote">&lt;span class=”hint—top hint—error hint—medium hint—rounded hint—bounce” aria-label=”Ruixiang Tang, Mengnan Du, Ninghao Liu, Fan Yang, and Xia Hu. An embarrassingly simple approach for trojan attack in deep neural networks. In KDD, 2020.</td>
+<tr class="odd">
+<td>Figure 2. patch
+sticker（图片来源于论文<sup id="fnref:9"><a href="#fn:9" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Ruixiang Tang, Mengnan Du, Ninghao Liu, Fan Yang, and Xia Hu. An embarrassingly simple approach for trojan attack in deep neural networks. In KDD, 2020.
+">[9]</span></a></sup>Figure 1）</td>
 </tr>
 </tbody>
 </table>
-</div>
-<p>“&gt;[9]&lt;/span&gt;&lt;/a&gt;&lt;/sup&gt;Figure 1）        |</p>
-<p>后门与触发器trigger应该是相互对应的，也就是说对于不同的后门，只有与之对应的特定的trigger才能触发。而某种trigger对于没有后门的模型，或者不与之对应的模型应该是不起作用的。因此我们可以用下面的公式表示：</p>
-<script type="math/tex; mode=display">
-\underset{\Theta}{\arg\min}||F_{\Theta^{\prime}}(x_{s}+\delta)-F_{\Theta^{\prime}}(x_{t})||_2+\lambda||F_{\Theta}(x_{s})-F_{\Theta}(x_{s}+\delta)||_2+\beta||\delta||_2 \tag{2}</script><p>其中$x_s，x_t$是未受污染（也就是没有加入trigger）的两个样本，$\delta$是trigger。公式(2)有三项：</p>
+<p>后门与触发器trigger应该是相互对应的，也就是说对于不同的后门，只有与之对应的特定的trigger才能触发。而某种trigger对于没有后门的模型，或者不与之对应的模型应该是不起作用的。因此我们可以用下面的公式表示：
+<span class="math display">\[
+\underset{\Theta}{\arg\min}||F_{\Theta^{\prime}}(x_{s}+\delta)-F_{\Theta^{\prime}}(x_{t})||_2+\lambda||F_{\Theta}(x_{s})-F_{\Theta}(x_{s}+\delta)||_2+\beta||\delta||_2
+\tag{2}
+\]</span> 其中<span
+class="math inline">\(x_s，x_t\)</span>是未受污染（也就是没有加入trigger）的两个样本，<span
+class="math inline">\(\delta\)</span>是trigger。公式(2)有三项：</p>
 <ul>
-<li>第一项$||F_{\Theta^{\prime}}(x_{s}+\delta)-F_{\Theta^{\prime}}(x_{t})||_2$跟公式(1)一样，为数据保真项，起到后门植入作用，也为了保证trigger和后门的对应关系。如Figure 1中的路径④</li>
-<li>第二项$||F_{\Theta}(x_{t})-F_{\Theta^{\prime}}(x_{t})||_2$为正则项，也就是对于未加入后门的模型$F_{\Theta}$，加不加trigger，模型的预测结果应该是一样的，这也是trigger的隐蔽性。</li>
-<li>第三项$||\delta||_2$也是正则项，含义是加入的trigger尽可能的微小，不要那么“显眼”，也是trigger隐蔽性的一种保证。</li>
+<li>第一项<span
+class="math inline">\(||F_{\Theta^{\prime}}(x_{s}+\delta)-F_{\Theta^{\prime}}(x_{t})||_2\)</span>跟公式(1)一样，为数据保真项，起到后门植入作用，也为了保证trigger和后门的对应关系。如Figure
+1中的路径④</li>
+<li>第二项<span
+class="math inline">\(||F_{\Theta}(x_{t})-F_{\Theta^{\prime}}(x_{t})||_2\)</span>为正则项，也就是对于未加入后门的模型<span
+class="math inline">\(F_{\Theta}\)</span>，加不加trigger，模型的预测结果应该是一样的，这也是trigger的隐蔽性。</li>
+<li>第三项<span
+class="math inline">\(||\delta||_2\)</span>也是正则项，含义是加入的trigger尽可能的微小，不要那么“显眼”，也是trigger隐蔽性的一种保证。</li>
 </ul>
-<h2 id="引入trigger的形式"><a href="#引入trigger的形式" class="headerlink" title="引入trigger的形式"></a>引入trigger的形式</h2><p>引入的trigger没有固定的形式，具体的根据不同的后门有所不同，但是遵循的基本原则有两个：（1）与植入的后门相对应，能够在输入模型后触发后门；（2）具有隐蔽性，在没有后门的场景不触发，而且不影响没有后门模型的性能（至少性能不要降低或者说降低很少）。一般的trigger形式有patch sticker（可以翻译成图像块贴纸，论文<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Tianyu Gu, Brendan Dolan-Gavitt, and Siddharth Garg. Badnets: Identifying vulnerabilities in the machine learning model supply chain. arXiv preprint arXiv:1708.06733, 2017.
-">[2]</span></a></sup>中使用的，Figure 3所示）、随机噪声（论文<sup id="fnref:11"><a href="#fn:11" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Lee, Y., Chen, K., Meng, G., & Lv, P. (2023). Aliasing backdoor attacks on pre-trained models. In *32nd USENIX Security Symposium (USENIX Security 23)* (pp. 2707-2724).
-">[11]</span></a></sup>中使用的，如Figure 4），或者针对特定的场景专门设计的trigger，比如论文<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Xinyun Chen, Chang Liu, Bo Li, Kimberly Lu, and Dawn Song. Targeted backdoor attacks on deep learning systems using data poisoning. arXiv preprint arXiv:1712.05526, 2017.
-">[1]</span></a></sup>中人脸识别场景使用的特定的眼镜（Figure 5所示）。</p>
-<h3 id="patch-sticker"><a href="#patch-sticker" class="headerlink" title="patch sticker"></a>patch sticker</h3><div class="table-container">
+<h2 id="引入trigger的形式">引入trigger的形式</h2>
+<p>引入的trigger没有固定的形式，具体的根据不同的后门有所不同，但是遵循的基本原则有两个：（1）与植入的后门相对应，能够在输入模型后触发后门；（2）具有隐蔽性，在没有后门的场景不触发，而且不影响没有后门模型的性能（至少性能不要降低或者说降低很少）。一般的trigger形式有patch
+sticker（可以翻译成图像块贴纸，论文<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Tianyu Gu, Brendan Dolan-Gavitt, and Siddharth Garg. Badnets: Identifying vulnerabilities in the machine learning model supply chain. arXiv preprint arXiv:1708.06733, 2017.
+">[2]</span></a></sup>中使用的，Figure
+3所示）、随机噪声（论文<sup id="fnref:11"><a href="#fn:11" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Lee, Y., Chen, K., Meng, G., &amp; Lv, P. (2023). Aliasing backdoor attacks on pre-trained models. In *32nd USENIX Security Symposium (USENIX Security 23)* (pp. 2707-2724).
+">[11]</span></a></sup>中使用的，如Figure
+4），或者针对特定的场景专门设计的trigger，比如论文<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Xinyun Chen, Chang Liu, Bo Li, Kimberly Lu, and Dawn Song. Targeted backdoor attacks on deep learning systems using data poisoning. arXiv preprint arXiv:1712.05526, 2017.
+">[1]</span></a></sup>中人脸识别场景使用的特定的眼镜（Figure
+5所示）。</p>
+<h3 id="patch-sticker">patch sticker</h3>
 <table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th><img src="/2023/11/05/backdoored-attack/image-20231107115528470.png" class="" title="image-20231107115528470"></th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Figure 3. patch sticker（图片来源于论文<sup id="fnref:2"><a href="#fn:2" rel="footnote">&lt;span class=”hint—top hint—error hint—medium hint—rounded hint—bounce” aria-label=”Tianyu Gu, Brendan Dolan-Gavitt, and Siddharth Garg. Badnets: Identifying vulnerabilities in the machine learning model supply chain. arXiv preprint arXiv:1708.06733, 2017.</td>
+<tr class="odd">
+<td>Figure 3. patch
+sticker（图片来源于论文<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Tianyu Gu, Brendan Dolan-Gavitt, and Siddharth Garg. Badnets: Identifying vulnerabilities in the machine learning model supply chain. arXiv preprint arXiv:1708.06733, 2017.
+">[2]</span></a></sup>Figure 7）</td>
 </tr>
 </tbody>
 </table>
-</div>
-<p>“&gt;[2]&lt;/span&gt;&lt;/a&gt;&lt;/sup&gt;Figure 7）        |</p>
-<h3 id="随机噪声"><a href="#随机噪声" class="headerlink" title="随机噪声"></a>随机噪声</h3><div class="table-container">
+<h3 id="随机噪声">随机噪声</h3>
 <table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th><img src="/2023/11/05/backdoored-attack/image-20231107121628944.png" class="" title="image-20231107121628944"></th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Figure 4. random noise（图片来自于论文<sup id="fnref:11"><a href="#fn:11" rel="footnote">&lt;span class=”hint—top hint—error hint—medium hint—rounded hint—bounce” aria-label=”Lee, Y., Chen, K., Meng, G., &amp; Lv, P. (2023). Aliasing backdoor attacks on pre-trained models. In <em>32nd USENIX Security Symposium (USENIX Security 23)</em> (pp. 2707-2724).</td>
+<tr class="odd">
+<td>Figure 4. random
+noise（图片来自于论文<sup id="fnref:11"><a href="#fn:11" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Lee, Y., Chen, K., Meng, G., &amp; Lv, P. (2023). Aliasing backdoor attacks on pre-trained models. In *32nd USENIX Security Symposium (USENIX Security 23)* (pp. 2707-2724).
+">[11]</span></a></sup>的Figure 4)</td>
 </tr>
 </tbody>
 </table>
-</div>
-<p>“&gt;[11]&lt;/span&gt;&lt;/a&gt;&lt;/sup&gt;的Figure 4)       |</p>
-<h3 id="特定场景使用的trigger"><a href="#特定场景使用的trigger" class="headerlink" title="特定场景使用的trigger"></a>特定场景使用的trigger</h3><div class="table-container">
+<h3 id="特定场景使用的trigger">特定场景使用的trigger</h3>
 <table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th><img src="/2023/11/05/backdoored-attack/image-20231107120257112.png" class="" title="image-20231107120257112"></th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Figure 5. special glasses trigger（图片来源于论文<sup id="fnref:1"><a href="#fn:1" rel="footnote">&lt;span class=”hint—top hint—error hint—medium hint—rounded hint—bounce” aria-label=”Xinyun Chen, Chang Liu, Bo Li, Kimberly Lu, and Dawn Song. Targeted backdoor attacks on deep learning systems using data poisoning. arXiv preprint arXiv:1712.05526, 2017.</td>
+<tr class="odd">
+<td>Figure 5. special glasses
+trigger（图片来源于论文<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span
+class="hint--top hint--error hint--medium hint--rounded hint--bounce"
+aria-label="Xinyun Chen, Chang Liu, Bo Li, Kimberly Lu, and Dawn Song. Targeted backdoor attacks on deep learning systems using data poisoning. arXiv preprint arXiv:1712.05526, 2017.
+">[1]</span></a></sup>Fig. 1）</td>
 </tr>
 </tbody>
 </table>
+<h1 id="references">References</h1>
+<div id="footnotes">
+<hr>
+<div id="footnotelist">
+<ol style="list-style: none; padding-left: 0; margin-left: 40px">
+<li id="fn:1">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span
+style="display: inline-block; vertical-align: top; margin-left: 10px;">Xinyun
+Chen, Chang Liu, Bo Li, Kimberly Lu, and Dawn Song. Targeted backdoor
+attacks on deep learning systems using data poisoning. arXiv preprint
+arXiv:1712.05526, 2017.<a href="#fnref:1" rev="footnote"> ↩︎</a></span>
+</li>
+<li id="fn:2">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span
+style="display: inline-block; vertical-align: top; margin-left: 10px;">Tianyu
+Gu, Brendan Dolan-Gavitt, and Siddharth Garg. Badnets: Identifying
+vulnerabilities in the machine learning model supply chain. arXiv
+preprint arXiv:1708.06733, 2017.<a href="#fnref:2" rev="footnote">
+↩︎</a></span>
+</li>
+<li id="fn:3">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span
+style="display: inline-block; vertical-align: top; margin-left: 10px;">Ali
+Shafahi, W Ronny Huang, Mahyar Najibi, Octavian Suciu, Christoph Studer,
+Tudor Dumitras, and Tom Goldstein. Poison frogs! targeted clean-label
+poisoning attacks on neural networks. NeurIPS,
+2018.<a href="#fnref:3" rev="footnote"> ↩︎</a></span>
+</li>
+<li id="fn:4">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span
+style="display: inline-block; vertical-align: top; margin-left: 10px;">Chen
+Zhu, W Ronny Huang, Hengduo Li, Gavin Taylor, Christoph Studer, and Tom
+Goldstein. Transferable clean-label poisoning attacks on deep neural
+nets. In ICML, 2019.<a href="#fnref:4" rev="footnote"> ↩︎</a></span>
+</li>
+<li id="fn:5">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span
+style="display: inline-block; vertical-align: top; margin-left: 10px;">Yu
+Ji, Zixin Liu, Xing Hu, Peiqi Wang, and Youhui Zhang. Programmable
+neural network trojan for pre-trained feature extractor. arXiv preprint
+arXiv:1901.07766, 2019.<a href="#fnref:5" rev="footnote"> ↩︎</a></span>
+</li>
+<li id="fn:6">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">6.</span><span
+style="display: inline-block; vertical-align: top; margin-left: 10px;">Shahbaz
+Rezaei and Xin Liu. A target-agnostic attack on deep models: Exploiting
+security vulnerabilities of transfer learning. arXiv preprint
+arXiv:1904.04334, 2019.<a href="#fnref:6" rev="footnote"> ↩︎</a></span>
+</li>
+<li id="fn:7">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">7.</span><span
+style="display: inline-block; vertical-align: top; margin-left: 10px;">Yuanshun
+Yao, Huiying Li, Haitao Zheng, and Ben Y Zhao. Latent backdoor attacks
+on deep neural networks. In CCS, 2019.<a href="#fnref:7" rev="footnote">
+↩︎</a></span>
+</li>
+<li id="fn:8">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">8.</span><span
+style="display: inline-block; vertical-align: top; margin-left: 10px;">Yingqi
+Liu, Shiqing Ma, Yousra Aafer, Wen-Chuan Lee, Juan Zhai, Weihang Wang,
+and Xiangyu Zhang. Trojaning attack on neural networks. In NDSS,
+2018.<a href="#fnref:8" rev="footnote"> ↩︎</a></span>
+</li>
+<li id="fn:9">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">9.</span><span
+style="display: inline-block; vertical-align: top; margin-left: 10px;">Ruixiang
+Tang, Mengnan Du, Ninghao Liu, Fan Yang, and Xia Hu. An embarrassingly
+simple approach for trojan attack in deep neural networks. In KDD,
+2020.<a href="#fnref:9" rev="footnote"> ↩︎</a></span>
+</li>
+<li id="fn:10">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">10.</span><span
+style="display: inline-block; vertical-align: top; margin-left: 10px;">Lv,
+P., Yue, C., Liang, R., Yang, Y., Zhang, S., Ma, H., &amp; Chen, K.
+(2023). A data-free backdoor injection approach in neural networks. In
+<em>32nd USENIX Security Symposium (USENIX Security 23)</em> (pp.
+2671-2688).<a href="#fnref:10" rev="footnote"> ↩︎</a></span>
+</li>
+<li id="fn:11">
+<span
+style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">11.</span><span
+style="display: inline-block; vertical-align: top; margin-left: 10px;">Lee,
+Y., Chen, K., Meng, G., &amp; Lv, P. (2023). Aliasing backdoor attacks
+on pre-trained models. In <em>32nd USENIX Security Symposium (USENIX
+Security 23)</em> (pp. 2707-2724).<a href="#fnref:11" rev="footnote">
+↩︎</a></span>
+</li>
+</ol>
 </div>
-<p>“&gt;[1]&lt;/span&gt;&lt;/a&gt;&lt;/sup&gt;Fig. 1） |</p>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Xinyun Chen, Chang Liu, Bo Li, Kimberly Lu, and Dawn Song. Targeted backdoor attacks on deep learning systems using data poisoning. arXiv preprint arXiv:1712.05526, 2017.<a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Tianyu Gu, Brendan Dolan-Gavitt, and Siddharth Garg. Badnets: Identifying vulnerabilities in the machine learning model supply chain. arXiv preprint arXiv:1708.06733, 2017.<a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Ali Shafahi, W Ronny Huang, Mahyar Najibi, Octavian Suciu, Christoph Studer, Tudor Dumitras, and Tom Goldstein. Poison frogs! targeted clean-label poisoning attacks on neural networks. NeurIPS, 2018.<a href="#fnref:3" rev="footnote"> ↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Chen Zhu, W Ronny Huang, Hengduo Li, Gavin Taylor, Christoph Studer, and Tom Goldstein. Transferable clean-label poisoning attacks on deep neural nets. In ICML, 2019.<a href="#fnref:4" rev="footnote"> ↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Yu Ji, Zixin Liu, Xing Hu, Peiqi Wang, and Youhui Zhang. Programmable neural network trojan for pre-trained feature extractor. arXiv preprint arXiv:1901.07766, 2019.<a href="#fnref:5" rev="footnote"> ↩</a></span></li><li id="fn:6"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">6.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Shahbaz Rezaei and Xin Liu. A target-agnostic attack on deep models: Exploiting security vulnerabilities of transfer learning. arXiv preprint arXiv:1904.04334, 2019.<a href="#fnref:6" rev="footnote"> ↩</a></span></li><li id="fn:7"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">7.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Yuanshun Yao, Huiying Li, Haitao Zheng, and Ben Y Zhao. Latent backdoor attacks on deep neural networks. In CCS, 2019.<a href="#fnref:7" rev="footnote"> ↩</a></span></li><li id="fn:8"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">8.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Yingqi Liu, Shiqing Ma, Yousra Aafer, Wen-Chuan Lee, Juan Zhai, Weihang Wang, and Xiangyu Zhang. Trojaning attack on neural networks. In NDSS, 2018.<a href="#fnref:8" rev="footnote"> ↩</a></span></li><li id="fn:9"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">9.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Ruixiang Tang, Mengnan Du, Ninghao Liu, Fan Yang, and Xia Hu. An embarrassingly simple approach for trojan attack in deep neural networks. In KDD, 2020.<a href="#fnref:9" rev="footnote"> ↩</a></span></li><li id="fn:10"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">10.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Lv, P., Yue, C., Liang, R., Yang, Y., Zhang, S., Ma, H., &amp; Chen, K. (2023). A data-free backdoor injection approach in neural networks. In <em>32nd USENIX Security Symposium (USENIX Security 23)</em> (pp. 2671-2688).<a href="#fnref:10" rev="footnote"> ↩</a></span></li><li id="fn:11"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">11.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Lee, Y., Chen, K., Meng, G., &amp; Lv, P. (2023). Aliasing backdoor attacks on pre-trained models. In <em>32nd USENIX Security Symposium (USENIX Security 23)</em> (pp. 2707-2724).<a href="#fnref:11" rev="footnote"> ↩</a></span></li></ol></div></div></div><div class="article-licensing box"><div class="licensing-title"><p>后门攻击</p><p><a href="https://tsmotlp.github.io/2023/11/05/backdoored-attack/">https://tsmotlp.github.io/2023/11/05/backdoored-attack/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>yqhuang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-11-05</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-11-08</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%A7%91%E7%A0%94/">科研</a></div><!--!--></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.JPG" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechat.JPG" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2023/11/07/quant-datasource/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">量化交易数据（一）：数据源</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2023/11/04/latex-symbols/"><span class="level-item">latex符号表</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><span class="level-item copyright article-title type-2">原创</span><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js"></script><script>new Valine({
+</div>
+</div><div class="article-licensing box"><div class="licensing-title"><p>后门攻击</p><p><a href="https://tsmotlp.github.io/2023/11/05/backdoored-attack/">https://tsmotlp.github.io/2023/11/05/backdoored-attack/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>yqhuang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-11-05</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-11-08</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%A7%91%E7%A0%94/">科研</a></div><!--!--></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.JPG" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechat.JPG" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2023/11/07/quant-datasource/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">量化交易数据（一）：数据源</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2023/11/04/latex-symbols/"><span class="level-item">latex符号表</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><span class="level-item copyright article-title type-2">原创</span><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js"></script><script>new Valine({
             el: '#valine-thread',
             appId: "YC4mJ8MHaxOBVFTo1GRr5yDB-gzGzoHsz",
             appKey: "M7OHMMjYi9awKK0BH7JdzICx",
