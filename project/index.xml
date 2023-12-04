@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | Academic</title>
+    <link>https://tsmotlp.github.io/project/</link>
+      <atom:link href="https://tsmotlp.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 30 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://tsmotlp.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Projects</title>
+      <link>https://tsmotlp.github.io/project/</link>
+    </image>
+    
+    <item>
+      <title>AI Security Research</title>
+      <link>https://tsmotlp.github.io/project/ai-security-research/</link>
+      <pubDate>Thu, 30 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://tsmotlp.github.io/project/ai-security-research/</guid>
+      <description>&lt;h1 id=&#34;ai-security-research&#34;&gt;AI Security Research&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A curated collection of the latest academic papers, conference information, and other resources in the field of AI Security.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;contents&#34;&gt;Contents&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#about-this-repository&#34;&gt;About This Repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#paper-collection&#34;&gt;Paper Collection&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#conferences-and-workshops&#34;&gt;Conferences and Workshops&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#resource-links&#34;&gt;Resource Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#how-to-contribute&#34;&gt;How to Contribute&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#copyright-and-license&#34;&gt;Copyright and License&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#contact-information&#34;&gt;Contact Information&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;about-this-repository&#34;&gt;About This Repository&lt;/h2&gt;
+&lt;p&gt;This repository aims to provide a centralized, accessible collection of academic papers and resources for the AI Security research community. We are committed to updating with the latest research findings, covering but not limited to the security of AI systems, privacy issues, attack and defense strategies.&lt;/p&gt;
+&lt;h2 id=&#34;paper-collection&#34;&gt;Paper Collection&lt;/h2&gt;
+&lt;p&gt;We have compiled the latest papers in the field of AI Security, categorized by year and conferences/journals. Each paper entry includes the title, authors, link, code(if available) and presentation materials(if available).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tsmotlp/AI-Security-Research/edit/master/papers/2023.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Papers from 2023&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tsmotlp/AI-Security-Research/edit/master/papers/2022.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Papers from 2022&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tsmotlp/AI-Security-Research/edit/master/papers/archive.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Archive of Earlier Papers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;conferences-and-workshops&#34;&gt;Conferences and Workshops&lt;/h2&gt;
+&lt;p&gt;Information about Security and Privacy related conferences, including deadlines.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://sec-deadlines.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Conferences Information&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;resource-links&#34;&gt;Resource Links&lt;/h2&gt;
+&lt;p&gt;Links to online courses, tutorials, seminar videos, and related open-source projects.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tsmotlp/AI-Security-Research/edit/master/resources/education.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Educational Resources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tsmotlp/AI-Security-Research/edit/master/resources/opensource.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Open Source Resources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tsmotlp/AI-Security-Research/edit/master/resources/news.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Industry News&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-to-contribute&#34;&gt;How to Contribute&lt;/h2&gt;
+&lt;p&gt;We welcome and encourage community members to contribute to this repository. Please see our &lt;a href=&#34;https://github.com/tsmotlp/AI-Security-Research/edit/master/CONTRIBUTING.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Contribution Guidelines&lt;/a&gt; for how to participate.&lt;/p&gt;
+&lt;h2 id=&#34;copyright-and-license&#34;&gt;Copyright and License&lt;/h2&gt;
+&lt;p&gt;The contents of this repository are licensed under the &lt;a href=&#34;https://github.com/tsmotlp/AI-Security-Research/edit/master/LICENSE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT License&lt;/a&gt;. We respect and adhere to the copyright and usage permissions of each paper and resource.&lt;/p&gt;
+&lt;h2 id=&#34;contact-information&#34;&gt;Contact Information&lt;/h2&gt;
+&lt;p&gt;For any questions or suggestions, please contact us through the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/AI-Security-Research/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Submit an Issue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Email: &lt;a href=&#34;mailto:yqhuang2912@gmail.com&#34;&gt;yqhuang2912@gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

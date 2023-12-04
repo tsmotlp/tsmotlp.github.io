@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://tsmotlp.github.io/sitemap.xml
