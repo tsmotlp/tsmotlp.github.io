@@ -1,0 +1,27 @@
+.header {
+  padding: 2rem 0;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.navigation a {
+  color: #666;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navigation a:hover {
+  color: #000;
+}
