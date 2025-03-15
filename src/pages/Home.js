@@ -29,9 +29,9 @@ import { Link as RouterLink } from 'react-router-dom';
 const Home = () => {
     // Research interests data
     const researchInterests = [
+        "Image Generation",
         "Federated Learning",
         "AI in Healthcare",
-        "Medical Data Privacy Protection"
     ];
 
     // Education history
@@ -153,7 +153,7 @@ const Home = () => {
                             }}
                         />
                         <Typography variant="h5" component="h1" align="center" gutterBottom>
-                            Yongqiang Huang
+                            Yongqiang Huang (黄永强)
                         </Typography>
                         <Typography variant="subtitle1" color="text.secondary" align="center" gutterBottom>
                             Ph.D. Student | Sichuan University

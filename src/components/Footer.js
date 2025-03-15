@@ -14,7 +14,7 @@ const Footer = () => {
           color="text.secondary"
           component="p"
         >
-          Academic Portfolio © Yongqiang Huang {new Date().getFullYear()}
+          © Yongqiang Huang {new Date().getFullYear()}
         </Typography>
       </Container>
     </Box>
