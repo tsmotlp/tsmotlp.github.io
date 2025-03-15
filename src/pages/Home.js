@@ -366,7 +366,7 @@ const Home = () => {
                                 variant="contained"
                                 color="primary"
                                 component={Link}
-                                href="/publications"
+                                href="#/publications"
                             >
                                 View All Publications
                             </Button>
