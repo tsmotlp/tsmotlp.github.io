@@ -1,6 +1,6 @@
 # Academic Website
 
-This project is a personal academic website designed to showcase academic achievements, research interests, and blog posts. It provides a clean and modern interface inspired by the Medium blogging platform.
+This project is a personal academic website designed to showcase academic achievements, research interests. It provides a clean and modern interface inspired by the Medium blogging platform.
 
 ## Features
 
@@ -8,9 +8,7 @@ This project is a personal academic website designed to showcase academic achiev
 - **Footer**: Contains copyright information and additional links.
 - **Navigation**: Provides easy access to different sections of the website.
 - **Profile**: Presents the user's academic background, education, and experience.
-- **Research**: Outlines research interests and ongoing projects.
 - **Publications**: Lists academic publications with details.
-- **Blog**: Showcases blog posts related to academic topics.
 - **Responsive Design**: The website is designed to be responsive and accessible on various devices.
 
 ## Getting Started

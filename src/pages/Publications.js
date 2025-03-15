@@ -47,9 +47,9 @@ const Publications = () => {
       pages: "2600-2614",
       year: 2020,
       impact: "8.9",
-      doi: "10.1109/TMI.2020.XXX",
-      paperLink: "https://doi.org/10.1109/TMI.2020.XXX",
-      codeLink: "https://github.com/yourusername/OCT-Denoising"
+      doi: "10.1109/TMI.2020.3045207",
+      paperLink: "https://ieeexplore.ieee.org/document/9296372",
+      codeLink: "https://github.com/tsmotlp/DRGAN-OCT"
     },
     {
       title: "Simultaneous denoising and super-resolution of optical coherence tomography images based on generative adversarial network",
@@ -59,9 +59,9 @@ const Publications = () => {
       pages: "12289-12307",
       year: 2019,
       impact: "3.2",
-      doi: "10.1364/OE.27.XXX",
-      paperLink: "https://doi.org/10.1364/OE.27.XXX",
-      codeLink: "https://github.com/yourusername/OCT-Super-Resolution"
+      doi: "10.1364/OE.27.012289",
+      paperLink: "https://opg.optica.org/oe/fulltext.cfm?uri=oe-27-9-12289&id=409094",
+      codeLink: "https://github.com/tsmotlp/SDSR-OCT"
     },
     {
       title: "M3NAS: Multi-Scale and Multi-Level Memory-Efficient Neural Architecture Search for Low-Dose CT Denoising",
@@ -71,8 +71,8 @@ const Publications = () => {
       pages: "850-863",
       year: 2022,
       impact: "8.9",
-      doi: "10.1109/TMI.2022.XXX",
-      paperLink: "https://doi.org/10.1109/TMI.2022.XXX"
+      doi: "10.1109/TMI.2022.3219286",
+      paperLink: "https://ieeexplore.ieee.org/abstract/document/9936653"
     },
     {
       title: "MAGIC: Manifold and graph integrative convolutional network for low-dose CT reconstruction",
@@ -82,8 +82,8 @@ const Publications = () => {
       pages: "3459-3472",
       year: 2021,
       impact: "8.9",
-      doi: "10.1109/TMI.2021.XXX",
-      paperLink: "https://doi.org/10.1109/TMI.2021.XXX"
+      doi: "10.1109/TMI.2021.3088344",
+      paperLink: "https://ieeexplore.ieee.org/abstract/document/9450848"
     },
     {
       title: "CT reconstruction with PDF: Parameter-dependent framework for data from multiple geometries and dose levels",
@@ -93,8 +93,8 @@ const Publications = () => {
       pages: "3065-3076",
       year: 2021,
       impact: "8.9",
-      doi: "10.1109/TMI.2021.XXX",
-      paperLink: "https://doi.org/10.1109/TMI.2021.XXX"
+      doi: "10.1109/TMI.2021.3085839",
+      paperLink: "https://ieeexplore.ieee.org/abstract/document/9446923"
     },
     {
       title: "MD-Recon-Net: a parallel dual-domain convolutional neural network for compressed sensing MRI",
@@ -103,8 +103,8 @@ const Publications = () => {
       volume: "5(1)",
       pages: "120-135",
       year: 2020,
-      doi: "10.1109/TRPMS.2020.XXX",
-      paperLink: "https://doi.org/10.1109/TRPMS.2020.XXX"
+      doi: "10.1109/TRPMS.2020.2991877",
+      paperLink: "https://ieeexplore.ieee.org/abstract/document/9084142"
     },
     {
       title: "Multi-task short-term reactive and active load forecasting method based on attention-LSTM model",
@@ -113,8 +113,8 @@ const Publications = () => {
       volume: "135",
       pages: "107517",
       year: 2022,
-      doi: "10.1016/j.ijepes.2022.XXX",
-      paperLink: "https://doi.org/10.1016/j.ijepes.2022.XXX"
+      doi: "10.1016/j.ijepes.2021.107517",
+      paperLink: "https://www.sciencedirect.com/science/article/abs/pii/S0142061521007560"
     }
   ];
 
@@ -129,8 +129,8 @@ const Publications = () => {
       note: "Oral Presentation",
       tier: "CCF-A",
       award: "Oral Presentation",
-      paperLink: "https://example.com/paper1",
-      codeLink: "https://github.com/yourusername/FedRIR"
+      paperLink: "https://arxiv.org/abs/2502.00859",
+      codeLink: "https://github.com/tsmotlp/FedRIR"
     },
     {
       title: "Disentanglement network for unsupervised speckle reduction of optical coherence tomography images",
@@ -139,8 +139,7 @@ const Publications = () => {
       location: "Lima, Peru",
       year: 2020,
       tier: "CCF-B",
-      paperLink: "https://doi.org/10.1007/XXX",
-      codeLink: "https://github.com/yourusername/OCT-Disentanglement"
+      paperLink: "https://link.springer.com/chapter/10.1007/978-3-030-59722-1_65"
     },
     {
       title: "Dual-domain adaptive-scaling non-local network for CT metal artifact reduction",
@@ -149,7 +148,7 @@ const Publications = () => {
       location: "Strasbourg, France",
       year: 2021,
       tier: "CCF-B",
-      paperLink: "https://doi.org/10.1007/XXX"
+      paperLink: "https://link.springer.com/chapter/10.1007/978-3-030-87231-1_24"
     },
     {
       title: "One network to solve them all: A sequential multi-task joint learning network framework for MR imaging pipeline",
@@ -158,7 +157,7 @@ const Publications = () => {
       location: "Strasbourg, France",
       year: 2021,
       tier: "CCF-B",
-      paperLink: "https://doi.org/10.1007/XXX"
+      paperLink: "https://link.springer.com/chapter/10.1007/978-3-030-88552-6_8"
     },
     {
       title: "Low-dose CT denoising via neural architecture search",
@@ -166,7 +165,7 @@ const Publications = () => {
       conference: "IEEE International Symposium on Biomedical Imaging (ISBI)",
       location: "Kolkata, India",
       year: 2022,
-      paperLink: "https://doi.org/10.1109/ISBI.2022.XXX"
+      paperLink: "https://ieeexplore.ieee.org/abstract/document/9761513"
     }
   ];
 

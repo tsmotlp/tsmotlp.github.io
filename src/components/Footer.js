@@ -14,16 +14,7 @@ const Footer = () => {
           color="text.secondary"
           component="p"
         >
-          © {new Date().getFullYear()} Academic Portfolio
-        </Typography>
-        <Typography variant="body2" color="text.secondary" align="center">
-          <Link color="inherit" href="mailto:yqhuang2912@gmail.com">
-            Contact
-          </Link>
-          {' | '}
-          <Link color="inherit" href="https://scholar.google.com/citations?user=VmxnkI8AAAAJ" target="_blank" rel="noopener noreferrer">
-            Google Scholar
-          </Link>
+          Academic Portfolio © Yongqiang Huang {new Date().getFullYear()}
         </Typography>
       </Container>
     </Box>

@@ -29,14 +29,10 @@ const Header = () => {
     const navItems = [
         { name: 'Home', path: '/' },
         { name: 'Publications', path: '/publications' },
-        // { name: 'Blog', path: '/blog' }
     ];
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <Typography variant="h6" sx={{ my: 2 }}>
-                Academic Portfolio
-            </Typography>
             <List>
                 {navItems.map((item) => (
                     <ListItem button component={Link} to={item.path} key={item.name}>
@@ -57,9 +53,6 @@ const Header = () => {
                         sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}
                     >
                         <span style={{ fontWeight: 'bold' }}>Yongqiang Huang</span>
-                        <Typography variant="subtitle2" color="text.secondary" sx={{ ml: 1 }}>
-                            | Academic Portfolio
-                        </Typography>
                     </Typography>
 
                     {isMobile ? (

@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/academic-website/static/css/main.766d4a2b.css",
+    "main.js": "/academic-website/static/js/main.e2fa8205.js",
+    "index.html": "/academic-website/index.html",
+    "main.766d4a2b.css.map": "/academic-website/static/css/main.766d4a2b.css.map",
+    "main.e2fa8205.js.map": "/academic-website/static/js/main.e2fa8205.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.766d4a2b.css",
+    "static/js/main.e2fa8205.js"
+  ]
+}

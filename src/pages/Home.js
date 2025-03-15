@@ -13,12 +13,15 @@ import {
     ListItemText,
     Card,
     CardContent,
-    Button
+    Button,
+    Link
 } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
 import BookIcon from '@mui/icons-material/Book';
-import Link from '@mui/material/Link';
+import AnnouncementIcon from '@mui/icons-material/Announcement';
+import CelebrationIcon from '@mui/icons-material/Celebration';
+import SchoolTwoToneIcon from '@mui/icons-material/SchoolTwoTone';
 import CodeIcon from '@mui/icons-material/Code';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 
@@ -84,8 +87,8 @@ const Home = () => {
             year: 2025,
             tier: "CCF-A",
             award: "Oral Presentation",
-            paperLink: "https://example.com/paper1",
-            codeLink: "https://github.com/yourusername/FedRIR"
+            paperLink: "https://arxiv.org/abs/2502.00859",
+            codeLink: "https://github.com/tsmotlp/FedRIR"
         },
         {
             title: "Noise-powered disentangled representation for unsupervised speckle reduction of optical coherence tomography images",
@@ -95,8 +98,8 @@ const Home = () => {
             pages: "2600-2614",
             year: 2020,
             impact: "8.9",
-            paperLink: "https://doi.org/10.1109/TMI.2020.XXX",
-            codeLink: "https://github.com/yourusername/OCT-Denoising"
+            paperLink: "https://ieeexplore.ieee.org/document/9296372",
+            codeLink: "https://github.com/tsmotlp/DRGAN-OCT"
         },
         {
             title: "Simultaneous denoising and super-resolution of optical coherence tomography images based on generative adversarial network",
@@ -106,8 +109,23 @@ const Home = () => {
             pages: "12289-12307",
             year: 2019,
             impact: "3.2",
-            paperLink: "https://doi.org/10.1364/OE.27.XXX",
-            codeLink: "https://github.com/yourusername/OCT-Super-Resolution"
+            paperLink: "https://opg.optica.org/oe/fulltext.cfm?uri=oe-27-9-12289&id=409094",
+            codeLink: "https://github.com/tsmotlp/SDSR-OCT"
+        }
+    ];
+
+    // News data
+    const newsItems = [
+        {
+            date: "2025.1.20",
+            title: "My paper 'FedRIR: Rethinking Information Representation in Federated Learning' was accepted as an oral presentation at The ACM Web Conference (WWW, CCF-A).",
+            icon: <CelebrationIcon color="primary" />,
+            link: "https://arxiv.org/abs/2502.00859"
+        },
+        {
+            date: "2024.9.10",
+            title: "Started my Ph.D. journey at Sichuan University in the School of Cyber Science and Engineering.",
+            icon: <SchoolTwoToneIcon color="primary" />
         }
     ];
 
@@ -119,8 +137,19 @@ const Home = () => {
                     <Grid item xs={12} md={4} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <Avatar
                             alt="Yongqiang Huang"
-                            src="/avatar.jpg"
-                            sx={{ width: 200, height: 200, mb: 2 }}
+                            src={`${process.env.PUBLIC_URL}/avatar.jpg`}
+                            sx={{
+                                width: 200,
+                                height: 200,
+                                mb: 2,
+                                bgcolor: '#1976d2' // 如果图片加载失败，显示蓝色背景
+                            }}
+                            imgProps={{
+                                onError: (e) => {
+                                    console.error('Avatar failed to load');
+                                    e.target.style.display = 'none'; // 隐藏错误的图片
+                                }
+                            }}
                         />
                         <Typography variant="h5" component="h1" align="center" gutterBottom>
                             Yongqiang Huang
@@ -137,15 +166,15 @@ const Home = () => {
 
                     <Grid item xs={12} md={8}>
                         <Typography variant="h4" gutterBottom>
-                            Welcome to My Academic Website
+                            Welcome to My Personal Website
                         </Typography>
                         <Typography variant="body1" paragraph>
                             I am a Ph.D. student in Cyber Science and Engineering at Sichuan University. My research
-                            focuses on federated learning, healthcare AI applications, and medical data privacy protection.
+                            focuses on Image Generation, Federated learning, AI in Healthcare.
                         </Typography>
                         <Typography variant="body1" paragraph>
                             Prior to beginning my doctoral studies, I worked as a Software Engineer at Huawei Cloud Computing
-                            Technology Co., Ltd. where I gained practical experience in cloud computing and large-scale distributed systems.
+                            Technology Co., Ltd. where I gained practical experience in cloud computing, large-scale distributed systems and data analysis.
                         </Typography>
                         <Typography variant="body1">
                             This website showcases my academic journey, research interests, and publications.
@@ -155,6 +184,44 @@ const Home = () => {
                 </Grid>
 
                 <Divider sx={{ my: 4 }} />
+
+                {/* News Section - 日期显示在左侧 */}
+                <Paper elevation={1} sx={{ p: 3, mb: 4 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                        <AnnouncementIcon color="primary" sx={{ mr: 1 }} />
+                        <Typography variant="h5">News</Typography>
+                    </Box>
+
+                    <List>
+                        {newsItems.map((news, index) => (
+                            <ListItem key={index} sx={{ px: 0, alignItems: 'flex-start' }}>
+                                <Box sx={{
+                                    display: 'flex',
+                                    width: '100%',
+                                    alignItems: 'flex-start'
+                                }}>
+                                    <Typography
+                                        variant="body2"
+                                        color="text.secondary"
+                                        sx={{
+                                            minWidth: '80px',
+                                            mr: 2,
+                                            pt: 0.3,
+                                            fontWeight: 'medium',
+                                            textAlign: 'right'
+                                        }}
+                                    >
+                                        {news.date}
+                                    </Typography>
+
+                                    <Typography variant="body1">
+                                        {news.title}
+                                    </Typography>
+                                </Box>
+                            </ListItem>
+                        ))}
+                    </List>
+                </Paper>
 
                 {/* Academic Profile */}
                 <Grid container spacing={4}>
@@ -327,8 +394,8 @@ const Home = () => {
                                         GitHub:
                                     </Typography>
                                     <Typography variant="body1">
-                                        <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                                            https://github.com/yourusername
+                                        <Link href="https://github.com/tsmotlp" target="_blank" rel="noopener noreferrer">
+                                            https://github.com/tsmotlp
                                         </Link>
                                     </Typography>
                                 </Box>
