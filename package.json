@@ -1,7 +1,7 @@
 {
   "name": "academic-website",
   "version": "1.0.0",
-  "homepage": "https://tsmotlp.github.io",
+  "homepage": "https://tsmotlp.github.io/academic-website/",
   "description": "A personal academic website to showcase research, publications, and profile.",
   "main": "src/App.js",
   "scripts": {
