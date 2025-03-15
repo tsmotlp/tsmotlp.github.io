@@ -1,0 +1,17 @@
+```
+
+### 5. 手动更新 GitHub Pages 设置
+
+1. 前往你的 GitHub 仓库
+2. 进入 "Settings" > "Pages"
+3. 确保源设置为 "gh-pages" 分支
+4. 确保自定义域名配置正确（如果有）
+
+## 实施步骤
+
+1. 创建上述文件
+2. 运行以下命令：
+
+```bash
+npm run build
+npm run deploy
