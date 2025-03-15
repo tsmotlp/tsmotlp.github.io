@@ -1,0 +1,26 @@
+d-projects\academic-website\public\404.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Website</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    // 单页应用重定向
+    (function () {
+      var path = window.location.pathname;
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect != path) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
+</body>
+
+</html>
