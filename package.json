@@ -1,12 +1,12 @@
 {
   "name": "academic-website",
   "version": "1.0.0",
-  "homepage": "https://tsmotlp.github.io",
+  "homepage": "https://tsmotlp.github.io/academic-website/",
   "description": "A personal academic website to showcase research, publications, and profile.",
   "main": "src/App.js",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && touch build/.nojekyll",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
