@@ -24,6 +24,7 @@ import CelebrationIcon from '@mui/icons-material/Celebration';
 import SchoolTwoToneIcon from '@mui/icons-material/SchoolTwoTone';
 import CodeIcon from '@mui/icons-material/Code';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Home = () => {
     // Research interests data
@@ -365,8 +366,8 @@ const Home = () => {
                             <Button
                                 variant="contained"
                                 color="primary"
-                                component={Link}
-                                href="#/publications"
+                                component={RouterLink}
+                                to="/publications"
                             >
                                 View All Publications
                             </Button>
